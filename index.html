@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Disappearing Ninjas!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascript.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("img").hover(function(){
+                $(this).fadeOut('fast',
+                    function(){
+                        $(this).attr("src", "img/art"+(parseInt($(this).attr('which-img'), 10)+1)+".jpg");
+                        $(this).fadeIn('fast')    
+                    }
+                );
+            }, 
+            function(){
+                $(this).fadeOut('fast',
+                    function(){
+                        $(this).attr("src", "img/art"+($(this).attr('which-img'))+".jpg");
+                        $(this).fadeIn('fast')    
+                    }
+                );
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3>Hover In/Out</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <img which-img="1" src="img/art1.jpg" alt="art history image">
+            </div>
+            <div class="col-md-3">
+                <img which-img="2" src="img/art2.jpg" alt="art history image">
+            </div>
+            <div class="col-md-3">
+                <img which-img="3" src="img/art3.jpg" alt="art history image">
+            </div>
+            <div class="col-md-3">
+                <img which-img="4" src="img/art4.jpg" alt="art history image">
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
